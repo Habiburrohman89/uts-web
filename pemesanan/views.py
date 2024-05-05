@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Penyewaan
+from .serializers import pemesananserializers
 
-# Create your views here.
+
+class PemesananViewSet(viewsets.ModelViewSet):
+    queryset = Penyewaan.objects.all()
+    serializer_class = pemesananserializers
