@@ -1,11 +1,16 @@
 from django.db import models
+from pemesanan.models import Penyewaan
 
-class pembayaran(models.Model):
-    nama = models.CharField(max_length=50)
-    berapa_hari = models.CharField(max_length=10)
-    harga = models.CharField(max_length=10)
-
+class Pembayaran(models.Model):
+    nama = models.ForeignKey(Penyewaan, on_delete=models.CASCADE)
+    jumlah = models.DecimalField(max_digits=10, decimal_places=2)
+    merek = models.CharField(max_length=50)
+    model = models.CharField(max_length=50)
+    tahun = models.IntegerField()
+    metode_pembayaran = models.CharField(max_length=100)
+    tanggal_pembayaran = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.nama
+
     

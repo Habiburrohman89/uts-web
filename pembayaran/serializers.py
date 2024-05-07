@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import pembayaran
+from .models import Pembayaran
 
-class PembayaranSerializers(serializers.ModelSerializer):
+class PembayaranSerializer(serializers.ModelSerializer):
     class Meta:
-        model = pembayaran
-        fields = ['id', 'nama','berpa_hari', 'harga']
+        model = Pembayaran
+        fields = '__all__'
