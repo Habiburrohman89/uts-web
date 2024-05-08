@@ -1,10 +1,8 @@
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import PembayaranViewSet
+from pembayaran import views
 
-router = DefaultRouter()
-router.register(r'pembayaran', PembayaranViewSet)
+
 
 urlpatterns = [
-    path('pembayaran/', include(router.urls)),
+    path('pembayaran/',views.pembayaran_list),
 ]

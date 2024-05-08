@@ -2,7 +2,7 @@ from django.db import models
 from pemesanan.models import Penyewaan
 
 class Pembayaran(models.Model):
-    nama = models.ForeignKey(Penyewaan, on_delete=models.CASCADE)
+    penyewa = models.ForeignKey(Penyewaan, related_name='pembayaran', on_delete=models.CASCADE)
     jumlah = models.DecimalField(max_digits=10, decimal_places=2)
     merek = models.CharField(max_length=50)
     model = models.CharField(max_length=50)

@@ -4,4 +4,4 @@ from .models import Pembayaran
 class PembayaranSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pembayaran
-        fields = '__all__'
+        fields = ['nama', 'jumlah','merek','model', 'tahun','metode_pembayaran','tanggal_pembayaran']
