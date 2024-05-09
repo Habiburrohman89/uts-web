@@ -1,10 +1,8 @@
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import PemesananViewSet
+from  .import views
 
-router = DefaultRouter()
-router.register(r'pemesanan',PemesananViewSet)
 
 urlpatterns = [
-    path('pemesanan/', include(router.urls)),
+    path('pemesanan/',views.PemesananList.as_view()),
+    path('pemesanan/<int:pk>/', views.PemesananDetail.as_view()),
 ]

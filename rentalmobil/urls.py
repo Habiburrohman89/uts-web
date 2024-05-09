@@ -19,6 +19,6 @@ from pemesanan import views
 
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
-    path('api/', include('pemesanan.urls')),
+    path('', include('pemesanan.urls')),
     path('', include('pembayaran.urls')),
 ]
